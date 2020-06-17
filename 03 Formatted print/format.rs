@@ -38,4 +38,8 @@ fn main() {
     // However, custom types such as this structure require more complicated
     // handling. This will not work.
     println!("This struct `{:#?}` won't print...", Structure(3));
+
+    // Exercise: Print pi to various decimal places or precision
+    let pi = 3.141592;
+    println!("Pi is roughly {:.3}", pi);
 }
