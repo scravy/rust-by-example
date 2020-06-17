@@ -28,6 +28,18 @@ impl fmt::Display for Point2D {
     }
 }
 
+#[derive(Debug)]
+struct Complex {
+    real: f64,
+    imag: f64
+}
+
+impl fmt::Display for Complex {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{real} + {imag}i", real=self.real, imag=self.imag)
+    }
+}
+
 fn main() {
     let minmax = MinMax(0, 14);
 
@@ -51,5 +63,10 @@ fn main() {
     // Error. Both `Debug` and `Display` were implemented, but `{:b}`
     // requires `fmt::Binary` to be implemented. This will not work.
     // println!("What does Point2D look like in binary: {:b}?", point);
+
+    let complexnumber = Complex { real: 3.3, imag: 7.2 };
+
+    println!("Display: {}", complexnumber);
+    println!("Debug: {:?}", complexnumber);
 }
 
