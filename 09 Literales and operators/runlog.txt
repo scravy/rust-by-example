@@ -1,0 +1,20 @@
+$ RUST_BACKTRACE=1 ./litops
+1 + 2 = 3
+1 - 2 = -1
+thread 'main' panicked at 'attempt to subtract with overflow', litops.rs:8:28
+stack backtrace:
+   0: <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt
+   1: core::fmt::write
+   2: std::io::Write::write_fmt
+   3: std::panicking::default_hook::{{closure}}
+   4: std::panicking::default_hook
+   5: std::panicking::rust_panic_with_hook
+   6: rust_begin_unwind
+   7: core::panicking::panic_fmt
+   8: core::panicking::panic
+   9: litops::main
+  10: std::rt::lang_start::{{closure}}
+  11: std::rt::lang_start_internal
+  12: std::rt::lang_start
+  13: main
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
