@@ -6,9 +6,7 @@ fn main() {
 
     // Integer subtraction
     println!("1 - 2 = {}", 1i32 - 2);
-    #[allow(arithmetic_overflow)] {
-        println!("1 - 2 = {}", Wrapping(1u32) - Wrapping(2));
-    }
+    println!("1 - 2 = {}", Wrapping(1u32) - Wrapping(2));
 
     // Short-circuiting boolean logic
     println!("true AND false is {}", true && false);
