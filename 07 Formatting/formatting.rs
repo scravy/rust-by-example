@@ -1,4 +1,4 @@
-use std::fmt::{self, Formatter, Display};
+use std::fmt::{self, Formatter, Display, UpperHex};
 
 struct City {
     name: &'static str,
@@ -25,7 +25,14 @@ struct Color {
 
 impl Display for Color {
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
-        write!(f, "RGB ({r}, {g}, {b}) 0x{r:>02X}{g:>02X}{b:>02X}",
+        write!(f, "RGB ({r}, {g}, {b}) {color:X}",
+               r = self.red, g = self.green, b = self.blue, color = self)
+    }
+}
+
+impl UpperHex for Color {
+    fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+        write!(f, "0x{r:>02X}{g:>02X}{b:>02X}",
                r = self.red, g = self.green, b = self.blue)
     }
 }
