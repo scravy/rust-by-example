@@ -1,11 +1,12 @@
-#[allow(arithmetic_overflow)]
 fn main() {
     // Integer addition
     println!("1 + 2 = {}", 1u32 + 2);
 
     // Integer subtraction
     println!("1 - 2 = {}", 1i32 - 2);
-    println!("1 - 2 = {}", 1u32 - 2);
+    #[allow(arithmetic_overflow)] {
+        println!("1 - 2 = {}", 1u32 - 2);
+    }
 
     // Short-circuiting boolean logic
     println!("true AND false is {}", true && false);
