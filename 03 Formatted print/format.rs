@@ -32,11 +32,10 @@ fn main() {
 
     // Create a structure named `Structure` which contains an `i32`.
     #[allow(dead_code)]
+    #[derive(Debug)]
     struct Structure(i32);
 
-    /*
     // However, custom types such as this structure require more complicated
     // handling. This will not work.
-    println!("This struct `{}` won't print...", Structure(3));
-    */
+    println!("This struct `{:?}` won't print...", Structure(3));
 }
